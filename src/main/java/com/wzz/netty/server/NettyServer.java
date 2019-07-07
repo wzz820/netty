@@ -19,6 +19,7 @@ import io.netty.handler.stream.ChunkedWriteHandler;
  * @create 2019/7/5 15:00
  **/
 public class NettyServer {
+
     private final int port;
 
     public NettyServer(int port) {
@@ -27,7 +28,6 @@ public class NettyServer {
 
     public void start() throws Exception {
         EventLoopGroup bossGroup = new NioEventLoopGroup();
-
         EventLoopGroup group = new NioEventLoopGroup();
         try {
             ServerBootstrap sb = new ServerBootstrap();
