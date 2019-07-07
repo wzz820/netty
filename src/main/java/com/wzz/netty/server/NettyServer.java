@@ -42,7 +42,7 @@ public class NettyServer {
                             System.out.println("收到新连接");
                             //websocket协议本身是基于http协议的，所以这边也要使用http解编码器
                             ch.pipeline().addLast(new HttpServerCodec());
-                            //以块的方式来写的处理器
+                            //以块的方式来写的处理器ceshi
                             ch.pipeline().addLast(new ChunkedWriteHandler());
                             ch.pipeline().addLast(new HttpObjectAggregator(8192));
                             ch.pipeline().addLast(new WebSocketServerProtocolHandler("/ws", "WebSocket", true, 65536 * 10));
